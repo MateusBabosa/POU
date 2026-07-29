@@ -3,5 +3,5 @@ body{
 }
 h1{
     color: aquamarine;
-    font-style: italic;
+    font-style: inherit;
 }
