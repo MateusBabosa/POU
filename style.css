@@ -1,8 +1,102 @@
-body{
-    background-color: indigo;
+
+/* Configurações gerais da página */
+body {
+    background-color: #F4E8C1;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    line-height: 1.6;
 }
-h1{
-    color: aquamarine;
-    font-style: unset;
+
+/* Cabeçalho */
+header {
+    padding: 10px;
+    text-align: right;
 }
-.Mapa{width: 110%;}
+
+header a {
+    color: #8B4513;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header a:hover {
+    text-decoration: underline;
+}
+
+/* Título principal */
+.introducao {
+    text-align: center;
+    margin: 25px 0;
+}
+
+h1 {
+    color: #8B4513;
+}
+
+h2 {
+    color: #8B4513;
+    margin-top: 25px;
+}
+
+/* Divisórias */
+hr {
+    border: none;
+    border-top: 2px solid #8B4513;
+}
+
+.divisoria-principal {
+    width: 85%;
+}
+
+.divisoria-secao {
+    width: 60%;
+    margin: 25px auto;
+}
+
+/* Imagens */
+.imagem-centralizada {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.mapa,
+.piramides,
+.nilo {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Lista de pirâmides */
+.lista-piramides {
+    width: fit-content;
+    max-width: 100%;
+    margin: 20px auto;
+    padding-left: 25px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 600px) {
+    body {
+        margin: 12px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .introducao h3 {
+        font-size: 17px;
+    }
+}
