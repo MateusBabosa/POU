@@ -1,165 +1,616 @@
 
-/* CONFIGURAÇÕES GERAIS */
+/* ========================================
+   EGITO - TERRA DOS FARAÓS
+   Tema: mistério, noite e ouro
+======================================== */
+
+:root {
+    --fundo: #11100D;
+    --fundo-claro: #1B1914;
+    --cartao: #211E17;
+    --dourado: #D6B45C;
+    --dourado-claro: #F2D98B;
+    --texto: #E9E2D3;
+    --texto-suave: #B7AD98;
+    --borda: #4B3C21;
+}
+
 * {
     box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-padding-top: 90px;
 }
 
 body {
-    background-color: #F4E8C1;
-    color: #333333;
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
     font-family: Arial, sans-serif;
-    margin: 20px;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* CABEÇALHO E BOTÃO DE CURIOSIDADES */
-header {
-    text-align: right;
-    padding: 25px 10px 20px;
-    margin-bottom: 15px;
+a {
+    color: inherit;
 }
 
-header a {
-    display: inline-block;
-    background-color: #8B4513;
-    color: #FFFFFF;
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--dourado-claro);
+    outline-offset: 4px;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+    min-height: 76px;
+    padding: 12px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    background: #0B0A08;
+    border-bottom: 1px solid var(--borda);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--dourado);
     text-decoration: none;
     font-weight: bold;
-    padding: 12px 20px;
-    border: 2px solid #C9A24D;
-    border-radius: 8px;
-    box-shadow: 0 3px 6px #00000020;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-header a::before {
-    content: "𓂀 ";
-    color: #F4D58D;
-}
-
-header a:hover {
-    background-color: #66300D;
-    transform: translateY(-2px);
-}
-
-header a:focus-visible {
-    outline: 3px solid #C9A24D;
-    outline-offset: 3px;
-}
-
-/* TÍTULO PRINCIPAL */
-.introducao {
-    text-align: center;
-    padding: 15px 10px;
-    margin-bottom: 25px;
-}
-
-h1 {
-    color: #8B4513;
-    font-size: 34px;
+    letter-spacing: 2px;
     line-height: 1.3;
 }
 
-.introducao h3 {
-    color: #6B5A40;
-    font-weight: normal;
+.marca .simbolo {
+    font-size: 32px;
 }
 
-/* TÍTULOS DAS SEÇÕES */
-h2 {
-    color: #8B4513;
-    margin-top: 25px;
-    margin-bottom: 15px;
+.marca small {
+    display: block;
+    color: var(--texto-suave);
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin-top: 4px;
 }
 
-/* DIVISÓRIAS */
-hr {
+.navegacao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 22px;
+}
+
+.navegacao a {
+    color: var(--texto-suave);
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.navegacao a:hover {
+    color: var(--dourado-claro);
+}
+
+.menu-alternar {
+    display: none;
+    color: var(--dourado);
+    background: transparent;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+
+/* ABERTURA */
+
+.hero {
+    min-height: 510px;
+    padding: 90px 8% 65px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(ellipse at 78% 65%, #70501B30, transparent 38%),
+        linear-gradient(120deg, #18150F, #0D0C09 70%);
+    border-bottom: 1px solid var(--borda);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 380px;
+    height: 380px;
+    right: 8%;
+    top: 50%;
+    transform: translateY(-45%);
+    border: 1px solid #D6B45C35;
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 30px #D6B45C08,
+        0 0 0 60px #D6B45C05;
+}
+
+.hero-conteudo {
+    max-width: 760px;
+    position: relative;
+    z-index: 1;
+}
+
+.sobretitulo {
+    color: var(--dourado);
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin: 0 0 14px;
+}
+
+.hero h1 {
+    max-width: 800px;
+    margin: 0;
+    color: var(--dourado-claro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(38px, 6vw, 68px);
+    line-height: 1.15;
+}
+
+.hero h1 span {
+    display: block;
+    color: var(--texto);
+    font-size: 0.62em;
+    margin-top: 12px;
+}
+
+.hero-descricao {
+    max-width: 570px;
+    color: var(--texto-suave);
+    margin: 24px 0 30px;
+}
+
+.hero-decoracao {
+    position: absolute;
+    right: 13%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #D6B45C17;
+    font-size: clamp(150px, 25vw, 290px);
+    pointer-events: none;
+}
+
+.hero-rodape {
+    margin: 65px 0 0;
+    color: #887650;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+/* BOTÕES */
+
+.botao-dourado {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 12px 21px;
+    border: 1px solid var(--dourado);
+    border-radius: 4px;
+    background: var(--dourado);
+    color: #18130A;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.2s;
+}
+
+.botao-dourado:hover {
+    background: var(--dourado-claro);
+    transform: translateY(-2px);
+}
+
+.botao-revelar {
+    margin-top: auto;
+    padding: 10px 0 0;
     border: none;
-    border-top: 2px solid #C9A24D;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    background: transparent;
+    color: var(--dourado);
+    text-align: left;
+    font-weight: bold;
+    font-size: 13px;
+    cursor: pointer;
 }
 
-.divisoria-principal {
-    width: 85%;
+.botao-revelar:hover {
+    color: var(--dourado-claro);
 }
 
-.divisoria-secao {
-    width: 60%;
+/* SEÇÕES */
+
+.secao {
+    padding: 70px 8%;
+    scroll-margin-top: 85px;
 }
 
-/* IMAGENS */
+.secao-alternada {
+    background: var(--fundo-claro);
+    border-top: 1px solid #FFFFFF08;
+    border-bottom: 1px solid #FFFFFF08;
+}
+
+.titulo-secao {
+    max-width: 850px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.titulo-secao h2,
+.convite-final h2 {
+    margin: 0;
+    color: var(--dourado-claro);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(26px, 4vw, 38px);
+    line-height: 1.3;
+}
+
+.titulo-secao > p:last-child {
+    color: var(--texto-suave);
+    margin: 12px 0 0;
+}
+
 .imagem-centralizada {
     text-align: center;
-    margin: 20px 0;
+    margin: 30px auto;
 }
 
 .mapa,
 .piramides,
 .nilo {
+    display: block;
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px #00000020;
+    margin: 0 auto;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    box-shadow: 0 12px 35px #00000045;
 }
 
-/* LISTA DE PIRÂMIDES */
+.mapa {
+    width: min(100%, 500px);
+}
+
+.piramides {
+    width: min(100%, 850px);
+}
+
+.nilo {
+    width: min(100%, 650px);
+}
+
+.texto-secao {
+    max-width: 850px;
+    margin: 30px auto 0;
+}
+
+.texto-secao p {
+    margin: 14px 0;
+    color: var(--texto);
+}
+
 .lista-piramides {
     width: fit-content;
     max-width: 100%;
-    margin: 20px auto;
-    padding-left: 25px;
+    margin: 30px auto;
+    padding: 20px 28px 20px 48px;
+    color: var(--texto);
+    background: var(--cartao);
+    border-left: 2px solid var(--dourado);
+    border-radius: 0 6px 6px 0;
 }
 
 .lista-piramides li {
-    padding: 3px 0;
+    padding: 4px 0;
 }
 
-/* PARÁGRAFOS */
-p {
-    margin: 15px 0;
+/* CURIOSIDADES */
+
+.grade-curiosidades {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    max-width: 1000px;
+    margin: 35px auto 0;
 }
 
-/* RODAPÉ */
-footer {
-    text-align: center;
-    color: #6B5A40;
+.cartao-curiosidade {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 25px;
+    background: var(--cartao);
+    border: 1px solid var(--borda);
+    border-radius: 7px;
+    transition: border-color 0.25s, transform 0.25s;
+}
+
+.cartao-curiosidade:hover {
+    border-color: var(--dourado);
+    transform: translateY(-3px);
+}
+
+.cartao-icone {
+    color: var(--dourado);
+    font-size: 34px;
+    line-height: 1.4;
+}
+
+.cartao-curiosidade h3 {
+    color: var(--dourado-claro);
+    margin: 12px 0 4px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+}
+
+.cartao-curiosidade > p:not(.resposta-curiosidade) {
+    color: var(--texto-suave);
+    margin: 0 0 18px;
+}
+
+.resposta-curiosidade {
+    width: 100%;
+    margin: 16px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid var(--borda);
+    color: var(--texto);
+    font-size: 14px;
+}
+
+.resposta-curiosidade[hidden],
+.resultado-quiz[hidden] {
+    display: none;
+}
+
+/* QUIZ */
+
+.quiz {
+    max-width: 800px;
+    margin: 35px auto 0;
+}
+
+.pergunta {
+    min-width: 0;
+    margin: 0 0 20px;
+    padding: 22px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    background: var(--fundo-claro);
+}
+
+.pergunta legend {
+    max-width: 100%;
+    padding: 0 8px;
+    color: var(--dourado-claro);
+    font-weight: bold;
+}
+
+.pergunta label {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: var(--texto);
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.pergunta label:hover {
+    background: #D6B45C0D;
+    border-color: var(--borda);
+}
+
+.pergunta input {
+    margin-top: 7px;
+    accent-color: var(--dourado);
+}
+
+.botao-quiz {
+    margin-top: 5px;
+}
+
+.resultado-quiz {
     margin-top: 25px;
-    padding: 10px;
+    padding: 22px;
+    border: 1px solid var(--dourado);
+    border-radius: 6px;
+    background: var(--cartao);
+    color: var(--texto);
 }
 
-footer h4 {
+/* ENCERRAMENTO E RODAPÉ */
+
+.convite-final {
+    padding: 70px 8%;
+    text-align: center;
+    background:
+        radial-gradient(ellipse at center, #70501B22, transparent 70%),
+        #0B0A08;
+    border-top: 1px solid var(--borda);
+}
+
+.convite-final h2 {
+    max-width: 650px;
+    margin: 0 auto 25px;
+}
+
+.rodape {
+    padding: 35px 20px;
+    text-align: center;
+    background: #080806;
+    border-top: 1px solid var(--borda);
+}
+
+.voltar-topo {
+    color: var(--dourado);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.voltar-topo:hover {
+    color: var(--dourado-claro);
+}
+
+.rodape > p {
+    color: var(--dourado);
+    font-size: 32px;
+    margin: 15px 0 0;
+}
+
+.rodape h4 {
+    margin: 5px 0;
+    color: var(--texto);
     font-weight: normal;
 }
 
-/* ADAPTAÇÃO PARA CELULARES */
-@media (max-width: 600px) {
-    body {
-        margin: 12px;
+.rodape small {
+    color: var(--texto-suave);
+}
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 800px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        padding: 12px 5%;
     }
 
-    header {
-        text-align: center;
-        padding-top: 15px;
+    .menu-alternar {
+        display: block;
     }
 
-    h1 {
-        font-size: 27px;
+    .navegacao {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-top: 8px;
+        border-top: 1px solid var(--borda);
     }
 
-    h2 {
-        font-size: 21px;
+    .navegacao.aberto {
+        display: flex;
     }
 
-    .introducao h3 {
-        font-size: 17px;
+    .navegacao a {
+        padding: 10px 4px;
     }
 
-    .divisoria-principal {
-        width: 95%;
+    .hero {
+        min-height: 450px;
+        padding: 70px 7% 45px;
     }
 
-    .divisoria-secao {
-        width: 75%;
+    .hero-decoracao {
+        right: -25px;
+        top: 38%;
+        font-size: 180px;
+    }
+
+    .hero-rodape {
+        margin-top: 45px;
+    }
+
+    .secao {
+        padding: 55px 6%;
+    }
+
+    .grade-curiosidades {
+        gap: 12px;
+    }
+
+    .cartao-curiosidade {
+        padding: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        min-height: 420px;
+        padding-top: 55px;
+    }
+
+    .hero-decoracao {
+        top: 30%;
+        font-size: 130px;
+    }
+
+    .hero h1 {
+        font-size: 39px;
+    }
+
+    .hero-rodape {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    .secao {
+        padding: 45px 5%;
+    }
+
+    .grade-curiosidades {
+        grid-template-columns: 1fr;
+    }
+
+    .cartao-curiosidade {
+        padding: 22px;
+    }
+
+    .pergunta {
+        padding: 17px;
+    }
+
+    .lista-piramides {
+        padding-left: 35px;
+        padding-right: 15px;
+    }
+}
+
+/* RESPEITA QUEM PREFERE MENOS ANIMAÇÕES */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
 }
