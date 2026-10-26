@@ -5,91 +5,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="theme-color" content="#11100D">
+    <meta name="description" content="Explore a história, as pirâmides e a cultura do Egito Antigo.">
+
     <title>Egito - Terra dos Faraós</title>
 
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
-
-    <header>
-        <a href="https://ciatrip.com/egito-10-curiosidades/">
-            Curiosidades do Egito
+    <header class="cabecalho">
+        <a class="marca" href="#inicio" aria-label="Voltar ao início">
+            <span class="simbolo">𓂀</span>
+            <span>EGITO <small>TERRA DOS FARAÓS</small></span>
         </a>
+
+        <button class="menu-alternar"
+                type="button"
+                aria-expanded="false"
+                aria-controls="menu-principal">
+            Menu ☰
+        </button>
+
+        <nav class="navegacao" id="menu-principal" aria-label="Navegação principal">
+            <a href="#localizacao">Localização</a>
+            <a href="#piramides">Pirâmides</a>
+            <a href="#cultura">Cultura</a>
+            <a href="#curiosidades">Curiosidades</a>
+            <a href="#quiz">Quiz</a>
+        </nav>
     </header>
 
     <main>
-        <section class="introducao">
-            <h1>🏛️ Egito - Terra dos Faraós 🏛️</h1>
-            <h3>Descubra a história e as curiosidades do Egito</h3>
+        <section class="hero" id="inicio">
+            <div class="hero-conteudo">
+                <p class="sobretitulo">UMA CIVILIZAÇÃO ETERNA</p>
+
+                <h1>Egito <span>— Terra dos Faraós</span></h1>
+
+                <p class="hero-descricao">
+                    Descubra os mistérios, os monumentos e os costumes
+                    de uma das civilizações mais fascinantes da humanidade.
+                </p>
+
+                <a class="botao-dourado" href="#localizacao">
+                    Iniciar exploração <span aria-hidden="true">↓</span>
+                </a>
+            </div>
+
+            <div class="hero-decoracao" aria-hidden="true">𓂀</div>
+
+            <p class="hero-rodape">HISTÓRIA · MISTÉRIO · ETERNIDADE</p>
         </section>
 
-        <hr class="divisoria-principal">
-
-        <section>
-            <h2>📍 Localização do Egito</h2>
+        <section class="secao" id="localizacao">
+            <div class="titulo-secao">
+                <p class="sobretitulo">01 — O TERRITÓRIO</p>
+                <h2>📍 Localização do Egito</h2>
+                <p>Entre as areias do deserto e as águas do Nilo.</p>
+            </div>
 
             <div class="imagem-centralizada">
                 <img class="mapa"
                      src="mapa-do-egito-atual.png"
-                     alt="Mapa do Egito"
-                     width="500">
+                     alt="Mapa do Egito atual"
+                     width="500"
+                     loading="lazy">
             </div>
 
-            <p>
-                O Egito é um país localizado no nordeste da África
-                e possui uma das civilizações mais antigas da humanidade.
-            </p>
+            <div class="texto-secao">
+                <p>
+                    O Egito é um país localizado no nordeste da África
+                    e possui uma das civilizações mais antigas da humanidade.
+                </p>
 
-            <p>
-                Grande parte da população vive próxima ao rio Nilo,
-                que foi essencial para o desenvolvimento da agricultura.
-            </p>
+                <p>
+                    Grande parte da população vive próxima ao rio Nilo,
+                    que foi essencial para o desenvolvimento da agricultura.
+                </p>
 
-            <p>
-                O Egito atual tem como capital a cidade do Cairo
-                e é um importante centro cultural e turístico.
-            </p>
+                <p>
+                    O Egito atual tem como capital a cidade do Cairo
+                    e é um importante centro cultural e turístico.
+                </p>
+            </div>
         </section>
 
-        <hr class="divisoria-secao">
-
-        <section>
-            <h2>🔺 As Pirâmides de Gizé</h2>
+        <section class="secao secao-alternada" id="piramides">
+            <div class="titulo-secao">
+                <p class="sobretitulo">02 — MONUMENTOS ETERNOS</p>
+                <h2>🔺 As Pirâmides de Gizé</h2>
+                <p>Construções monumentais que atravessaram milênios.</p>
+            </div>
 
             <div class="imagem-centralizada">
                 <img class="piramides"
                      src="All_Gizah_Pyramids.jpg"
-                     alt="Pirâmides de Gizé"
-                     width="600">
+                     alt="As pirâmides do complexo de Gizé"
+                     width="600"
+                     loading="lazy">
             </div>
 
-            <p>
-                As pirâmides são os monumentos mais conhecidos do Egito
-                e atraem milhões de visitantes todos os anos.
-            </p>
+            <div class="texto-secao">
+                <p>
+                    As pirâmides são os monumentos mais conhecidos do Egito
+                    e atraem milhões de visitantes todos os anos.
+                </p>
 
-            <p>
-                A Grande Pirâmide de Quéops é considerada uma das
-                Sete Maravilhas do Mundo Antigo.
-            </p>
+                <p>
+                    A Grande Pirâmide de Quéops é considerada uma das
+                    Sete Maravilhas do Mundo Antigo.
+                </p>
 
-            <p>
-                Essas construções serviam como túmulos para os faraós
-                e demonstravam o poder dos governantes.
-            </p>
+                <p>
+                    Essas construções serviam como túmulos para os faraós
+                    e demonstravam o poder dos governantes.
+                </p>
+            </div>
         </section>
 
-        <hr class="divisoria-secao">
-
-        <section>
-            <h2>☀️ Cultura e História</h2>
+        <section class="secao" id="cultura">
+            <div class="titulo-secao">
+                <p class="sobretitulo">03 — CRENÇAS E COSTUMES</p>
+                <h2>☀️ Cultura e História</h2>
+                <p>Conheça as crenças, os registros e os monumentos egípcios.</p>
+            </div>
 
             <div class="imagem-centralizada">
                 <img class="nilo"
                      src="images.jpeg"
                      alt="Paisagem do Egito"
-                     width="500">
+                     width="500"
+                     loading="lazy">
             </div>
 
             <ul class="lista-piramides">
@@ -101,35 +149,167 @@
                 <li>Pirâmide Curvada</li>
             </ul>
 
-            <p>
-                Os antigos egípcios utilizavam a escrita hieroglífica
-                para registrar acontecimentos importantes.
-            </p>
+            <div class="texto-secao">
+                <p>
+                    Os antigos egípcios utilizavam a escrita hieroglífica
+                    para registrar acontecimentos importantes.
+                </p>
 
-            <p>
-                A religião era baseada em diversos deuses,
-                como Rá, Anúbis e Osíris.
-            </p>
+                <p>
+                    A religião era baseada em diversos deuses,
+                    como Rá, Anúbis e Osíris.
+                </p>
 
-            <p>
-                A mumificação era realizada porque os egípcios
-                acreditavam na vida após a morte.
-            </p>
+                <p>
+                    A mumificação era realizada porque os egípcios
+                    acreditavam na vida após a morte.
+                </p>
 
-            <p>
-                Atualmente, o Egito continua sendo um dos países
-                mais fascinantes do mundo devido à sua história
-                e aos seus monumentos.
-            </p>
+                <p>
+                    Atualmente, o Egito continua sendo um dos países
+                    mais fascinantes do mundo devido à sua história
+                    e aos seus monumentos.
+                </p>
+            </div>
         </section>
 
-        <hr class="divisoria-principal">
+        <section class="secao secao-alternada" id="curiosidades">
+            <div class="titulo-secao">
+                <p class="sobretitulo">04 — SEGREDOS DO PASSADO</p>
+                <h2>Curiosidades do Egito</h2>
+                <p>Selecione um cartão para revelar uma curiosidade.</p>
+            </div>
 
+            <div class="grade-curiosidades">
+                <article class="cartao-curiosidade">
+                    <span class="cartao-icone" aria-hidden="true">𓆣</span>
+                    <h3>Os hieróglifos</h3>
+                    <p>Um sistema de escrita cheio de símbolos.</p>
+                    <button class="botao-revelar"
+                            type="button"
+                            aria-expanded="false">
+                        Revelar curiosidade +
+                    </button>
+                    <p class="resposta-curiosidade" hidden>
+                        Os hieróglifos podiam representar sons, palavras
+                        ou ideias e eram usados em templos, monumentos
+                        e outros registros.
+                    </p>
+                </article>
+
+                <article class="cartao-curiosidade">
+                    <span class="cartao-icone" aria-hidden="true">𓇳</span>
+                    <h3>O rio Nilo</h3>
+                    <p>Uma fonte de vida no meio da região árida.</p>
+                    <button class="botao-revelar"
+                            type="button"
+                            aria-expanded="false">
+                        Revelar curiosidade +
+                    </button>
+                    <p class="resposta-curiosidade" hidden>
+                        As cheias do Nilo depositavam sedimentos férteis
+                        nas margens, favorecendo a agricultura e o
+                        desenvolvimento das cidades.
+                    </p>
+                </article>
+
+                <article class="cartao-curiosidade">
+                    <span class="cartao-icone" aria-hidden="true">𓅃</span>
+                    <h3>Deuses egípcios</h3>
+                    <p>Uma religião com muitas divindades.</p>
+                    <button class="botao-revelar"
+                            type="button"
+                            aria-expanded="false">
+                        Revelar curiosidade +
+                    </button>
+                    <p class="resposta-curiosidade" hidden>
+                        Rá era associado ao Sol, Anúbis aos ritos funerários
+                        e Osíris à vida após a morte e à renovação.
+                    </p>
+                </article>
+
+                <article class="cartao-curiosidade">
+                    <span class="cartao-icone" aria-hidden="true">𓏏</span>
+                    <h3>O papiro</h3>
+                    <p>Um material importante para os registros.</p>
+                    <button class="botao-revelar"
+                            type="button"
+                            aria-expanded="false">
+                        Revelar curiosidade +
+                    </button>
+                    <p class="resposta-curiosidade" hidden>
+                        Os egípcios produziam folhas de escrita a partir
+                        da planta papiro, que crescia em áreas úmidas.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="secao area-quiz" id="quiz">
+            <div class="titulo-secao">
+                <p class="sobretitulo">05 — DESAFIO DO FARAÓ</p>
+                <h2>Teste seus conhecimentos</h2>
+                <p>Responda às perguntas e descubra quanto aprendeu.</p>
+            </div>
+
+            <form id="form-quiz" class="quiz">
+                <fieldset class="pergunta">
+                    <legend>1. Em qual continente fica o Egito?</legend>
+                    <label><input type="radio" name="q1" value="a" required> Europa</label>
+                    <label><input type="radio" name="q1" value="b"> África</label>
+                    <label><input type="radio" name="q1" value="c"> América do Sul</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>2. Qual rio foi essencial para a agricultura egípcia?</legend>
+                    <label><input type="radio" name="q2" value="a" required> Rio Nilo</label>
+                    <label><input type="radio" name="q2" value="b"> Rio Amazonas</label>
+                    <label><input type="radio" name="q2" value="c"> Rio Tâmisa</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>3. Para que serviam principalmente as pirâmides reais?</legend>
+                    <label><input type="radio" name="q3" value="a" required> Como mercados</label>
+                    <label><input type="radio" name="q3" value="b"> Como fortalezas militares</label>
+                    <label><input type="radio" name="q3" value="c"> Como túmulos de governantes</label>
+                </fieldset>
+
+                <fieldset class="pergunta">
+                    <legend>4. Como se chama a escrita do antigo Egito feita com símbolos?</legend>
+                    <label><input type="radio" name="q4" value="a" required> Alfabeto cirílico</label>
+                    <label><input type="radio" name="q4" value="b"> Escrita hieroglífica</label>
+                    <label><input type="radio" name="q4" value="c"> Escrita cuneiforme</label>
+                </fieldset>
+
+                <button class="botao-dourado botao-quiz" type="submit">
+                    Ver meu resultado
+                </button>
+
+                <p id="resultado-quiz"
+                   class="resultado-quiz"
+                   role="status"
+                   aria-live="polite"
+                   hidden></p>
+            </form>
+        </section>
+
+        <section class="convite-final">
+            <p class="sobretitulo">CONTINUE SUA DESCOBERTA</p>
+            <h2>O passado ainda tem muito a revelar.</h2>
+            <a class="botao-dourado"
+               href="https://ciatrip.com/egito-10-curiosidades/"
+               target="_blank"
+               rel="noopener noreferrer">
+                Explorar mais curiosidades ↗
+            </a>
+        </section>
     </main>
 
-    <footer>
+    <footer class="rodape">
+        <a href="#inicio" class="voltar-topo">↑ Voltar ao início</a>
+        <p>𓂀</p>
         <h4>Site desenvolvido para fins educacionais</h4>
+        <small>Egito — Terra dos Faraós</small>
     </footer>
-
 </body>
 </html>
