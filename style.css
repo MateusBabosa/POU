@@ -1,7 +1,7 @@
 
 /* ========================================
-   EGITO - TERRA DOS FARAÓS
-   Tema: mistério, noite e ouro
+   EGITO - TERRA DOS FAROES
+   Tema: misterio, noite e ouro
 ======================================== */
 
 :root {
@@ -53,7 +53,7 @@ input:focus-visible {
     outline-offset: 4px;
 }
 
-/* CABEÇALHO */
+/* CABECALHO */
 
 .cabecalho {
     min-height: 76px;
@@ -103,7 +103,7 @@ input:focus-visible {
     color: var(--texto-suave);
     text-decoration: none;
     font-size: 13px;
-    transition: color 0.2s;
+    transition: color 0.25s;
 }
 
 .navegacao a:hover {
@@ -123,7 +123,7 @@ input:focus-visible {
 /* ABERTURA */
 
 .hero {
-    min-height: 510px;
+    min-height: 540px;
     padding: 90px 8% 65px;
     display: flex;
     flex-direction: column;
@@ -132,8 +132,17 @@ input:focus-visible {
     overflow: hidden;
     isolation: isolate;
     background:
-        radial-gradient(ellipse at 78% 65%, #70501B30, transparent 38%),
-        linear-gradient(120deg, #18150F, #0D0C09 70%);
+        radial-gradient(
+            ellipse at 78% 55%,
+            #8D672322,
+            transparent 42%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 85px,
+            #D6B45C04 86px 87px
+        ),
+        linear-gradient(120deg, #201A10, #0D0C09 75%);
     border-bottom: 1px solid var(--borda);
 }
 
@@ -146,11 +155,12 @@ input:focus-visible {
     right: 8%;
     top: 50%;
     transform: translateY(-45%);
-    border: 1px solid #D6B45C35;
+    border: 1px solid #D6B45C40;
     border-radius: 50%;
     box-shadow:
-        0 0 0 30px #D6B45C08,
-        0 0 0 60px #D6B45C05;
+        0 0 0 20px #D6B45C08,
+        0 0 0 45px #D6B45C06,
+        0 0 0 75px #D6B45C03;
 }
 
 .hero-conteudo {
@@ -201,12 +211,12 @@ input:focus-visible {
 
 .hero-rodape {
     margin: 65px 0 0;
-    color: #887650;
+    color: #A58B50;
     font-size: 10px;
     letter-spacing: 3px;
 }
 
-/* BOTÕES */
+/* BOTOES */
 
 .botao-dourado {
     display: inline-flex;
@@ -223,14 +233,16 @@ input:focus-visible {
     font-size: 14px;
     cursor: pointer;
     transition:
-        background 0.2s,
-        color 0.2s,
-        transform 0.2s;
+        background 0.25s,
+        color 0.25s,
+        transform 0.25s,
+        box-shadow 0.25s;
 }
 
 .botao-dourado:hover {
     background: var(--dourado-claro);
     transform: translateY(-2px);
+    box-shadow: 0 5px 20px #D6B45C25;
 }
 
 .botao-revelar {
@@ -249,23 +261,54 @@ input:focus-visible {
     color: var(--dourado-claro);
 }
 
-/* SEÇÕES */
+/* SECOES */
 
 .secao {
-    padding: 70px 8%;
+    padding: 80px 8%;
+    position: relative;
+    isolation: isolate;
     scroll-margin-top: 85px;
+
+    background:
+        radial-gradient(
+            ellipse at 8% 18%,
+            #D6B45C08,
+            transparent 35%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 95px,
+            #D6B45C025 96px 97px
+        ),
+        var(--fundo);
 }
 
 .secao-alternada {
-    background: var(--fundo-claro);
+    background:
+        radial-gradient(
+            ellipse at 90% 20%,
+            #D6B45C0B,
+            transparent 35%
+        ),
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 110px,
+            #D6B45C025 111px 112px
+        ),
+        var(--fundo-claro);
+
     border-top: 1px solid #FFFFFF08;
     border-bottom: 1px solid #FFFFFF08;
 }
 
 .titulo-secao {
     max-width: 850px;
-    margin: 0 auto 32px;
+    margin: 0 auto 38px;
     text-align: center;
+}
+
+.titulo-secao .sobretitulo {
+    margin-bottom: 14px;
 }
 
 .titulo-secao h2,
@@ -275,6 +318,7 @@ input:focus-visible {
     font-family: Georgia, "Times New Roman", serif;
     font-size: clamp(26px, 4vw, 38px);
     line-height: 1.3;
+    text-wrap: balance;
 }
 
 .titulo-secao > p:last-child {
@@ -282,9 +326,12 @@ input:focus-visible {
     margin: 12px 0 0;
 }
 
+/* IMAGENS */
+
 .imagem-centralizada {
     text-align: center;
-    margin: 30px auto;
+    margin: 35px auto;
+    position: relative;
 }
 
 .mapa,
@@ -294,9 +341,14 @@ input:focus-visible {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
-    border: 1px solid var(--borda);
-    border-radius: 6px;
-    box-shadow: 0 12px 35px #00000045;
+    border: 1px solid #806630;
+    border-radius: 8px;
+    box-shadow:
+        0 15px 35px #00000055,
+        0 0 0 5px #D6B45C08;
+    transition:
+        transform 0.35s,
+        box-shadow 0.35s;
 }
 
 .mapa {
@@ -311,29 +363,65 @@ input:focus-visible {
     width: min(100%, 650px);
 }
 
+.mapa:hover,
+.piramides:hover,
+.nilo:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 20px 40px #00000065,
+        0 0 0 5px #D6B45C10;
+}
+
+/* TEXTOS COM MAIS INTEGRACAO VISUAL */
+
 .texto-secao {
     max-width: 850px;
-    margin: 30px auto 0;
+    margin: 38px auto 0;
+    padding: 18px 25px;
+    background: linear-gradient(
+        110deg,
+        #D6B45C08,
+        #FFFFFF02 75%
+    );
+    border-left: 2px solid #806630;
+    border-radius: 0 8px 8px 0;
 }
 
 .texto-secao p {
     margin: 14px 0;
     color: var(--texto);
+    line-height: 1.9;
+}
+
+.texto-secao p:first-child {
+    margin-top: 0;
+}
+
+.texto-secao p:last-child {
+    margin-bottom: 0;
 }
 
 .lista-piramides {
     width: fit-content;
     max-width: 100%;
-    margin: 30px auto;
-    padding: 20px 28px 20px 48px;
+    margin: 35px auto;
+    padding: 22px 30px 22px 48px;
     color: var(--texto);
-    background: var(--cartao);
-    border-left: 2px solid var(--dourado);
-    border-radius: 0 6px 6px 0;
+    background:
+        linear-gradient(135deg, #D6B45C09, transparent 75%),
+        var(--cartao);
+    border: 1px solid #D6B45C20;
+    border-left: 3px solid var(--dourado);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 8px 25px #00000020;
 }
 
 .lista-piramides li {
-    padding: 4px 0;
+    padding: 5px 0;
+}
+
+.lista-piramides li::marker {
+    color: var(--dourado);
 }
 
 /* CURIOSIDADES */
@@ -341,7 +429,7 @@ input:focus-visible {
 .grade-curiosidades {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    gap: 20px;
     max-width: 1000px;
     margin: 35px auto 0;
 }
@@ -351,16 +439,23 @@ input:focus-visible {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 25px;
-    background: var(--cartao);
+    padding: 28px;
+    background:
+        linear-gradient(145deg, #D6B45C08, transparent 65%),
+        var(--cartao);
     border: 1px solid var(--borda);
-    border-radius: 7px;
-    transition: border-color 0.25s, transform 0.25s;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px #00000015;
+    transition:
+        border-color 0.3s,
+        transform 0.3s,
+        box-shadow 0.3s;
 }
 
 .cartao-curiosidade:hover {
     border-color: var(--dourado);
-    transform: translateY(-3px);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px #00000035;
 }
 
 .cartao-icone {
@@ -388,6 +483,7 @@ input:focus-visible {
     border-top: 1px solid var(--borda);
     color: var(--texto);
     font-size: 14px;
+    line-height: 1.8;
 }
 
 .resposta-curiosidade[hidden],
@@ -397,6 +493,16 @@ input:focus-visible {
 
 /* QUIZ */
 
+.area-quiz {
+    background:
+        radial-gradient(
+            ellipse at 50% 0%,
+            #D6B45C09,
+            transparent 50%
+        ),
+        var(--fundo);
+}
+
 .quiz {
     max-width: 800px;
     margin: 35px auto 0;
@@ -404,11 +510,18 @@ input:focus-visible {
 
 .pergunta {
     min-width: 0;
-    margin: 0 0 20px;
+    margin: 0 0 22px;
     padding: 22px;
     border: 1px solid var(--borda);
-    border-radius: 6px;
-    background: var(--fundo-claro);
+    border-radius: 8px;
+    background:
+        linear-gradient(120deg, #D6B45C06, transparent 75%),
+        var(--fundo-claro);
+    transition: border-color 0.25s;
+}
+
+.pergunta:focus-within {
+    border-color: #806630;
 }
 
 .pergunta legend {
@@ -416,6 +529,7 @@ input:focus-visible {
     padding: 0 8px;
     color: var(--dourado-claro);
     font-weight: bold;
+    line-height: 1.6;
 }
 
 .pergunta label {
@@ -423,9 +537,9 @@ input:focus-visible {
     align-items: flex-start;
     gap: 10px;
     margin-top: 12px;
-    padding: 10px 12px;
+    padding: 11px 12px;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius: 5px;
     color: var(--texto);
     cursor: pointer;
     transition: background 0.2s, border-color 0.2s;
@@ -449,18 +563,27 @@ input:focus-visible {
     margin-top: 25px;
     padding: 22px;
     border: 1px solid var(--dourado);
-    border-radius: 6px;
+    border-radius: 8px;
     background: var(--cartao);
     color: var(--texto);
 }
 
-/* ENCERRAMENTO E RODAPÉ */
+/* ENCERRAMENTO */
 
 .convite-final {
-    padding: 70px 8%;
+    padding: 85px 8%;
     text-align: center;
     background:
-        radial-gradient(ellipse at center, #70501B22, transparent 70%),
+        radial-gradient(
+            ellipse at center,
+            #70501B25,
+            transparent 70%
+        ),
+        repeating-linear-gradient(
+            135deg,
+            transparent 0 100px,
+            #D6B45C025 101px 102px
+        ),
         #0B0A08;
     border-top: 1px solid var(--borda);
 }
@@ -470,8 +593,14 @@ input:focus-visible {
     margin: 0 auto 25px;
 }
 
+.convite-final .botao-dourado {
+    margin-top: 5px;
+}
+
+/* RODAPE */
+
 .rodape {
-    padding: 35px 20px;
+    padding: 40px 20px;
     text-align: center;
     background: #080806;
     border-top: 1px solid var(--borda);
@@ -501,6 +630,35 @@ input:focus-visible {
 
 .rodape small {
     color: var(--texto-suave);
+}
+
+/* ANIMACOES DE ENTRADA DURANTE A ROLAGEM */
+
+/* Navegadores que suportam animacoes ligadas a rolagem */
+@supports (animation-timeline: view()) {
+    .titulo-secao,
+    .imagem-centralizada,
+    .texto-secao,
+    .lista-piramides,
+    .grade-curiosidades,
+    .quiz,
+    .convite-final > * {
+        animation: aparecer linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 25%;
+    }
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0.35;
+        transform: translateY(22px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* CELULARES E TABLETS */
@@ -549,15 +707,19 @@ input:focus-visible {
     }
 
     .secao {
-        padding: 55px 6%;
+        padding: 60px 6%;
     }
 
     .grade-curiosidades {
-        gap: 12px;
+        gap: 14px;
     }
 
     .cartao-curiosidade {
-        padding: 18px;
+        padding: 20px;
+    }
+
+    .texto-secao {
+        padding: 17px 20px;
     }
 }
 
@@ -582,7 +744,11 @@ input:focus-visible {
     }
 
     .secao {
-        padding: 45px 5%;
+        padding: 48px 5%;
+    }
+
+    .titulo-secao {
+        margin-bottom: 28px;
     }
 
     .grade-curiosidades {
@@ -601,16 +767,25 @@ input:focus-visible {
         padding-left: 35px;
         padding-right: 15px;
     }
+
+    .texto-secao {
+        padding: 15px 16px;
+    }
+
+    .convite-final {
+        padding: 65px 6%;
+    }
 }
 
-/* RESPEITA QUEM PREFERE MENOS ANIMAÇÕES */
+/* ACESSIBILIDADE: REDUZ MOVIMENTOS SE SOLICITADO */
 
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
     *::after {
         scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-        animation-duration: 0.01ms !important;
+        animation: none !important;
+        transition: none !important;
     }
-}
+   }
+   
