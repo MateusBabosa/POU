@@ -789,3 +789,47 @@ input:focus-visible {
     }
    }
    
+/* Pirâmides: imagem e texto lado a lado */
+#piramides .imagem-centralizada {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+#piramides .imagem-centralizada img {
+    width: 50%;
+    max-width: 600px;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+}
+
+#piramides .texto-secao {
+    flex: 1;
+    min-width: 0;
+    padding: 20px;
+    background: rgba(33, 30, 23, 0.65);
+    border-left: 2px solid var(--dourado);
+    border-radius: 0 10px 10px 0;
+}
+
+/* No celular, imagem em cima e texto embaixo */
+@media (max-width: 700px) {
+    #piramides .imagem-centralizada {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    #piramides .imagem-centralizada img {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #piramides .texto-secao {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
