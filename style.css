@@ -789,47 +789,48 @@ input:focus-visible {
     }
    }
    
-/* Pirâmides: imagem e texto lado a lado */
-#piramides .imagem-centralizada {
+
+/* PIRAMIDES: IMAGEM E TEXTO LADO A LADO */
+
+#piramides .conteudo-piramides {
     display: flex;
     align-items: center;
     gap: 30px;
-    margin-top: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-#piramides .imagem-centralizada img {
-    width: 50%;
-    max-width: 600px;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+#piramides .imagem-centralizada {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+}
+
+#piramides .imagem-centralizada .piramides {
+    width: 100%;
+    max-width: none;
+    margin: 0;
 }
 
 #piramides .texto-secao {
     flex: 1;
     min-width: 0;
-    padding: 20px;
-    background: rgba(33, 30, 23, 0.65);
-    border-left: 2px solid var(--dourado);
-    border-radius: 0 10px 10px 0;
+    max-width: none;
+    margin: 0;
+    padding: 22px;
 }
 
-/* No celular, imagem em cima e texto embaixo */
+/* CELULAR E TELAS ESTREITAS */
+
 @media (max-width: 700px) {
-    #piramides .imagem-centralizada {
+    #piramides .conteudo-piramides {
         flex-direction: column;
-        gap: 18px;
+        align-items: stretch;
+        gap: 22px;
     }
 
-    #piramides .imagem-centralizada img {
-        width: 100%;
-        max-width: 100%;
-    }
-
+    #piramides .imagem-centralizada,
     #piramides .texto-secao {
         width: 100%;
-        box-sizing: border-box;
     }
 }
-
